@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "553130190767",
+    "project_id": "balqaa-kcy3hf",
+    "storage_bucket": "balqaa-kcy3hf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553130190767:android:83c374a80742395722f15a",
+        "android_client_info": {
+          "package_name": "com.valor.balqaa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjqp0HNSunLOPakKFMotrGL6u6UXFTdWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

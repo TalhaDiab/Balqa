@@ -1,0 +1,2 @@
+NSLocationWhenInUseUsageDescription = "Please enable location services on your device.";
+PermissionGroupNotification = "For a better experience, please allow the app to show notifications.";
