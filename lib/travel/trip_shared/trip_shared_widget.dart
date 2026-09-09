@@ -2141,8 +2141,8 @@ class _TripSharedWidgetState extends State<TripSharedWidget> {
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .secondaryBackground,
-                                                  suffixIcon: Icon(
-                                                    FontAwesomeIcons.edit,
+                                                  suffixIcon: FaIcon(
+                                                    FontAwesomeIcons.penToSquare,
                                                   ),
                                                 ),
                                                 style:

@@ -2050,8 +2050,8 @@ class _TripWidgetState extends State<TripWidget> {
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              suffixIcon: Icon(
-                                                FontAwesomeIcons.edit,
+                                              suffixIcon: FaIcon(
+                                                FontAwesomeIcons.penToSquare,
                                               ),
                                             ),
                                             style: FlutterFlowTheme.of(context)
