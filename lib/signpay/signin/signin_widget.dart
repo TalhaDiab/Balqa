@@ -232,11 +232,7 @@ class _SigninWidgetState extends State<SigninWidget> {
                                                               context)
                                                           .bodyMediumIsCustom,
                                                 ),
-                                            maxLength: valueOrDefault<int>(
-                                              functions.numberLength(
-                                                  FFAppState().CountryValue),
-                                              9,
-                                            ),
+                                            maxLength: 21,
                                             buildCounter: (context,
                                                     {required currentLength,
                                                     required isFocused,
