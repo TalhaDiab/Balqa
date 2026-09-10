@@ -1,4 +1,5 @@
 # Uncomment this line to define a global platform for your project
+source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '15.0.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
@@ -54,6 +55,13 @@ post_install do |installer|
         # dart: PermissionGroup.notification
         'PERMISSION_NOTIFICATIONS=1',
       ]
+    end
+  end
+
+  Dir.glob(File.join(installer.sandbox.root, "Target Support Files", "**", "*.xcconfig")).each do |xcconfig_path|
+    content = File.read(xcconfig_path)
+    if content.include?('BUILD_LIBRARY_FOR_DISTRIBUTION = YES')
+      File.write(xcconfig_path, content.gsub('BUILD_LIBRARY_FOR_DISTRIBUTION = YES', 'BUILD_LIBRARY_FOR_DISTRIBUTION = NO'))
     end
   end
 end
