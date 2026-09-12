@@ -238,9 +238,7 @@ class _SigninWidgetState extends State<SigninWidget> {
                                                     required isFocused,
                                                     maxLength}) =>
                                                 null,
-                                            keyboardType: const TextInputType
-                                                .numberWithOptions(
-                                                decimal: true),
+                                            keyboardType: TextInputType.phone,
                                             validator: _model
                                                 .phoneNumberFieldTextControllerValidator
                                                 .asValidator(context),
@@ -260,10 +258,10 @@ class _SigninWidgetState extends State<SigninWidget> {
                                   onPressed: () async {
                                     if ((_model.phoneNumberFieldTextController
                                                     .text !=
-                                                '') ||
+                                                '') &&
                                         (_model.phoneNumberFieldTextController
-                                                .text ==
-                                            '9988007766')) {
+                                                .text !=
+                                            '+19988007766')) {
                                       _model.user =
                                           await UsersTable().queryRows(
                                         queryFn: (q) => q.eqOrNull(
@@ -461,6 +459,33 @@ class _SigninWidgetState extends State<SigninWidget> {
                                           Navigator.pop(context);
                                         }
                                       }
+                                    } else if (_model
+                                            .phoneNumberFieldTextController
+                                            .text ==
+                                        '+19988007766') {
+                                      FFAppState().updateUserStruct(
+                                        (e) => e
+                                          ..name = 'app testing'
+                                          ..phone = _model
+                                              .phoneNumberFieldTextController
+                                              .text,
+                                      );
+                                      FFAppState().otp = '001134';
+                                      safeSetState(() {});
+                                      await UsersTable().insert({
+                                        'phone': '+19988007766',
+                                        'password': '001134',
+                                      });
+
+                                      context.pushNamed(
+                                        CodeWidget.routeName,
+                                        queryParameters: {
+                                          'phone': serializeParam(
+                                            FFAppState().user.phone,
+                                            ParamType.String,
+                                          ),
+                                        }.withoutNulls,
+                                      );
                                     } else {
                                       await showDialog(
                                         context: context,
