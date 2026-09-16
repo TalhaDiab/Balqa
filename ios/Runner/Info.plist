@@ -95,5 +95,9 @@
 	<false/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>يستخدم بلقاء موقعك أثناء الرحلات لتتبع موقع المركبة وتحديث حالة الرحلة وتسهيل خدمات النقل والتوصيل.</string>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
 </dict>
 </plist>

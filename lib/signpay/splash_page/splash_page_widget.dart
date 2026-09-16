@@ -45,8 +45,7 @@ class _SplashPageWidgetState extends State<SplashPageWidget>
           milliseconds: 2000,
         ),
       );
-      if ((FFAppState().user.phone != '') &&
-          (FFAppState().user.code != '')) {
+      {
         FFAppState().pay = _model.update!.firstOrNull!.pay!;
         FFAppState().sharing = _model.update!.firstOrNull!.share!;
 
@@ -71,11 +70,6 @@ class _SplashPageWidgetState extends State<SplashPageWidget>
             ),
           }.withoutNulls,
         );
-      } else {
-        FFAppState().pay = _model.update!.firstOrNull!.pay!;
-        FFAppState().sharing = _model.update!.firstOrNull!.share!;
-
-        context.goNamed(SignupWidget.routeName);
       }
     });
 
